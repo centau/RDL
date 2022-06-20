@@ -1,0 +1,30 @@
+{
+    "name": "RDL",
+    "tree": {
+        "$className": "DataModel",
+
+        "ReplicatedStorage": {
+            "$path": "test/shared",
+            "RDL": {
+                "$path": "src"
+            }
+        },
+
+        "ServerScriptService": {
+            "$className": "ServerScriptService",
+            "server": {
+                "$path": "test/server"
+            }
+        },
+
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+            "StarterPlayerScripts": {
+                "$className": "StarterPlayerScripts",
+                "client": {
+                    "$path": "test/client"
+                }
+            }
+        }
+    }
+}
