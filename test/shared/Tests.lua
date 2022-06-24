@@ -23,6 +23,28 @@ local function tablesAreEqual(a, b): boolean
     return true
 end
 
+local function tablesAreEqual(a, b): boolean
+    if #a ~= #b then return false end
+
+    for i, v in next, a do
+        if type(b[i]) == "table" and type(v) == "table" then 
+            if tablesAreEqual(b[i], v) == false then return false end   
+        elseif b[i] ~= v then
+            return false
+        end
+    end
+
+    for i, v in next, b do
+        if type(a[i]) == "table" and type(v) == "table" then 
+            if tablesAreEqual(a[i], v) == false then return false end   
+        elseif a[i] ~= v then
+            return false
+        end
+    end
+
+    return true
+end
+
 local function approx(a: number, b: number, tolerance: number): boolean
     return math.abs(a - b) <= tolerance
 end
